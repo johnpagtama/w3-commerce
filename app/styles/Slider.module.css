@@ -7,17 +7,19 @@
     align-items: center;
 }
 
-#slider {
+.slider {
     width: 100%;
     height: 100%;
     white-space: nowrap;
-    overflow-x: scroll;
     overflow-y: hidden;
+    overflow-x: scroll;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 .slider-icon.left, .slider-icon.right {
     position: absolute;
+    z-index: 2;
     border-radius: 100%;
     border: #eeeeee;
     background-color: #eeeeee;
@@ -54,7 +56,6 @@
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    /* padding: 0 50px; */
     transition: background-color .6s ease, transform .6s;
 }
 

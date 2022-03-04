@@ -4,7 +4,12 @@ import Slider from '../components/slider'
 const Home = () => {
 
   return (
-    <Slider />
+    <>
+      <Slider category={`electronics`} />
+      <Slider category={`women's clothing`} />
+      <Slider category={`men's clothing`} />
+      <Slider category={`jewelery`} />
+    </>
   )
 }
 
