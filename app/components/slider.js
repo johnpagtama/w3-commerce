@@ -1,11 +1,11 @@
 import styles from '../styles/Slider.module.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
-const Slider = () => {
-    const slides = [1, 2, 3, 4, 5]
+const Slider = ({ category }) => {
     const [products, setProducts] = useState([])
+    const slider = useRef(null)
 
     useEffect(() => {
         const getProducts = async () => {
@@ -18,32 +18,39 @@ const Slider = () => {
                 console.error(err)
             }
         }
+
         getProducts()
     }, [])
 
+    const slideLeft = () => slider.current.scrollLeft -= 325
+
+    const slideRight = () => slider.current.scrollLeft += 325
+
     return (
         <div id={styles['main-slider-container']}>
-            <button onClick={(e) => console.log(e)} className={`${styles['slider-icon']} ${styles.left}`}>
-                <MdChevronLeft size={40} />
-            </button>
+            {(() => {
+                if (products.filter((a) => a.category === category).length > 4) {
+                    return <MdChevronLeft onClick={slideLeft} className={`${styles['slider-icon']} ${styles.left}`} size={40} />
+                }
+            })()}
 
-            <div id={styles['slider']}>
+            <div ref={slider} className={styles['slider']}>
                 {
-                    products.map((a) => {
-                        if (a.category === 'men\'s clothing') {
-                            return (
-                                <div key={a.id} className={`${styles['slider-card']}`}>
-                                    <div className={`${styles['slider-card-image']}`} style={{ backgroundImage: `url(${a.image})` }}></div>
-                                </div>
-                            )
-                        }
+                    products.filter((a) => a.category === category).map((a) => {
+                        return (
+                            <div key={a.id} className={`${styles['slider-card']}`}>
+                                <div className={`${styles['slider-card-image']}`} style={{ backgroundImage: `url(${a.image})` }}></div>
+                            </div>
+                        )
                     })
                 }
             </div>
 
-            <button onClick={(e) => console.log(e)} className={`${styles['slider-icon']} ${styles.right}`}>
-                <MdChevronRight size={40} />
-            </button>
+            {(() => {
+                if (products.filter((a) => a.category === category).length > 4) {
+                    return <MdChevronRight onClick={slideRight} className={`${styles['slider-icon']} ${styles.right}`} size={40} />
+                }
+            })()}
         </div>
     )
 }
