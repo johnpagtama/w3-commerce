@@ -1,0 +1,46 @@
+.base {
+    min-width: 10rem;
+    margin: 5px auto;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.base:hover {
+    cursor: pointer;
+}
+
+.primary {
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 2px solid #3aa0ff;
+    border-radius: 4px;
+    background-color: #3aa0ff;
+}
+
+.primary:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.secondary {
+    border: 2px solid #7bcae4;
+    border-radius: 4px;
+    background-color: #7bcae4;
+}
+
+.secondary:hover {
+    border: 2px solid #5ebbda;
+    border-radius: 4px;
+    background-color: #5ebbda;
+}
+
+.secondary-outline {
+    border: 2px solid #7bcae4;
+    border-radius: 4px;
+    color: #000;
+}
+
+.secondary-outline:hover {
+    border: 2px solid #7bcae4;
+    border-radius: 4px;
+    background-color: #7bcae4;
+    color: #fff;
+}
