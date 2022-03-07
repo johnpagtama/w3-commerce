@@ -1,0 +1,45 @@
+.layout {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    height: 100vh;
+    width: 15rem;
+    border: 1px solid #5db1ff;
+    border-radius: 15px 0 0 15px;
+    background-color: #5db1ff;
+}
+
+.layout__menu {
+    display: grid;
+    grid-template-areas:    'layout__menu__close'
+                            'layout__menu__wallet'
+                            'layout__menu__signin'
+                            'layout__menu__signup';
+}
+
+.layout__menu__close {
+    grid-area: layout__menu__close;
+    margin: 15px;
+    color: #fff;
+}
+
+.layout__menu__close:hover {
+    cursor: pointer;
+}
+
+
+.layout__menu__wallet {
+    grid-area: layout__menu__wallet;
+    margin: 0 auto;
+}
+
+.layout__menu__signin {
+    grid-area: layout__menu__signin;
+    margin: 0 auto;
+}
+
+.layout__menu__signup {
+    grid-area: layout__menu__signup;
+    margin: 0 auto;
+}
+
