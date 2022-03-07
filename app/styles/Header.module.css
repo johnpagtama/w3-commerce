@@ -1,6 +1,7 @@
 .layout {
     display: grid;
     margin: 0 0 5rem;
+    background-color: #3aa0ff;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-template-areas:    'layout__logo           .          layout__cart         layout__auth';
 }
@@ -17,6 +18,7 @@
 .layout__cart {
     grid-area: layout__cart;
     margin: auto 0 auto auto;
+    color: #fff;
 }
 
 .layout__cart:hover {
@@ -25,14 +27,19 @@
 
 .layout__auth {
     grid-area: layout__auth;
-    display: grid;
     margin: auto 3rem auto auto;
-    grid-template-areas:    'layout__auth__wallet'
-                            'layout__auth__signin'
-                            'layout__auth__signup';
+    color: #fff;
 }
 
-.layout__auth__wallet {
+.layout__auth:hover {
+    cursor: pointer;
+}
+
+.layout__menu {
+    grid-area: layout__menu;
+}
+
+/* .layout__auth__wallet {
     grid-area: layout__auth__wallet;
 }
 
@@ -42,4 +49,4 @@
 
 .layout__auth__signup {
     grid-area: layout__auth__signup;
-}
+} */
