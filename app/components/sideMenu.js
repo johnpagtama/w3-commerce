@@ -11,10 +11,10 @@ const SideMenu = ({ state, setState }) => {
                     <Button onClick={() => console.log('Sign in with moralis')} color='primary' text='Wallet Sign in' type='button' />
                 </div>
                 <div className={`${styles['layout__menu__signin']}`}>
-                    <Button onClick={() => console.log('Go to sign in page')} color='secondary' text='Email Sign in' type='button' />
+                    <Button variant='link' color='secondary-link' link='login' text='Email Sign in' />
                 </div>
                 <div className={`${styles['layout__menu__signup']}`}>
-                    <Button onClick={() => console.log('Go to registration page')} color='secondary-outline' text='Email Registration' type='button' />
+                    <Button variant='link' color='secondary-link-outline' link='registration' text='Email Registration' />
                 </div>
             </div>
         </div>

@@ -1,0 +1,40 @@
+.layout {
+    background-color: #000;
+    height: 100vh;
+}
+
+.layout__form {
+    display: grid;
+    /* margin: 5rem auto; */
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:    'layout__form__email'
+                            'layout__form__password'
+                            'layout__form__registration'
+                            'layout__form__signin';
+}
+
+.layout__form__email {
+    grid-area: layout__form__email;
+}
+
+.layout__form__password {
+    grid-area: layout__form__password;
+}
+
+.layout__form__registration {
+    grid-area: layout__form__registration;
+}
+
+.layout__form__registration__link {
+    grid-area: layout__form__registration__link;
+    color: #fff;
+}
+
+.layout__form__registration__link>a {
+    text-decoration: underline;
+    color: #2acaff;
+}
+
+.layout__form__signin {
+    grid-area: layout__form__signin;
+}

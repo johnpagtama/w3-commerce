@@ -1,9 +1,16 @@
 import styles from '../styles/Button.module.css'
+import React from 'react'
 
-const Button = ({ onClick, variant, color, type = 'button', text }) => {
-    return (
-        <button onClick={onClick} className={`${styles['base']} ${styles[variant]} ${styles[color]}`} type={type}>{text}</button>
-    )
-}
+const Button = React.forwardRef(({ onClick, variant, color, type = 'button', text, link = '/' }, ref) => {
+    if (variant !== 'link') {
+        return (
+            <button ref={ref} onClick={onClick} className={`${styles['base']} ${styles[variant]} ${styles[color]}`} type={type}>{text}</button>
+        )
+    } else {
+        return (
+            <a href={link} ref={ref} className={`${styles['base-link']} ${styles[variant]} ${styles[color]}`}>{text}</a>
+        )
+    }
+})
 
 export default Button
