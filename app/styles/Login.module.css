@@ -1,12 +1,18 @@
 .layout {
-    background-color: #000;
+    background-color: #fafafa;
     height: 100vh;
+    padding: 7rem;
 }
 
 .layout__form {
     display: grid;
-    /* margin: 5rem auto; */
-    grid-template-rows: repeat(4, 1fr);
+    width: 50%;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 10rem 5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    grid-template-rows: auto auto repeat(2, 1fr);
     grid-template-areas:    'layout__form__email'
                             'layout__form__password'
                             'layout__form__registration'
@@ -15,26 +21,105 @@
 
 .layout__form__email {
     grid-area: layout__form__email;
+    margin: 5px auto;
+    display: inline-block;
+    position: relative;
+    width: 25rem;
+    border-radius: 10px;
+}
+
+.layout__form__email__input~.layout__form__email__focus__border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transition: 0.4s;
+}
+
+.layout__form__email__input:focus~.layout__form__email__focus__border {
+    width: 100%;
+    transition: 0.6s;
+    background-color: #3399FF;
+    left: 0;
+}
+
+.layout__form__email__input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 2px 2px 0 0;
+    border: 0px solid transparent;
+    border-bottom: 3px solid #333;
+    outline: transparent;
+    background-color: #fff;
+    color: #000;
+    width: 25rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 .layout__form__password {
     grid-area: layout__form__password;
+    margin: 5px auto;
+    display: inline-block;
+    position: relative;
+    width: 25rem;
+    border-radius: 10px;
+}
+
+.layout__form__password__input~.layout__form__password__focus__border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  transition: 0.4s;
+  }
+
+.layout__form__password__input:focus~.layout__form__password__focus__border {
+  width: 100%;
+  transition: 0.6s;
+  background-color: #3399FF;
+  left: 0;
+}
+
+.layout__form__password__input {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 2px 2px 0 0;
+  border: 0px solid transparent;
+  border-bottom: 3px solid #333;
+  outline: transparent;
+  background-color: #fff;
+  color: #000;
+  width: 25rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.2rem;
 }
 
 .layout__form__registration {
     grid-area: layout__form__registration;
+    margin: 0 auto;
 }
 
 .layout__form__registration__link {
     grid-area: layout__form__registration__link;
-    color: #fff;
+    margin: 10px auto;
+    color: #000;
 }
 
-.layout__form__registration__link>a {
-    text-decoration: underline;
+.layout__form__registration__link > a {
     color: #2acaff;
+    text-decoration: underline;
 }
 
 .layout__form__signin {
     grid-area: layout__form__signin;
+    margin: 5px auto;
 }
