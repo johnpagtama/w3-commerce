@@ -2,7 +2,7 @@
     display: grid;
     margin: 0 0 5rem;
     background-color: #3aa0ff;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 10rem;
     grid-template-areas:    'layout__logo           .          layout__cart         layout__auth';
 }
 
@@ -18,6 +18,7 @@
 .layout__cart {
     grid-area: layout__cart;
     margin: auto 0 auto auto;
+    justify-content: end;
     color: #fff;
 }
 
