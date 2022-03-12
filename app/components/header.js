@@ -9,14 +9,12 @@ const Header = () => {
     const [show, setShow] = useState(false)
 
     return (
-        <>
-            <div className={`${styles.layout}`}>
-                <FcRating className={`${styles['layout__logo']}`} size={50} />
-                <IoCart className={`${styles['layout__cart']}`} size={30} />
-                <GiHamburgerMenu onClick={() => setShow(!show)} className={`${styles['layout__auth']}`} size={25} />
-                {show ? <SideMenu state={show} setState={setShow} /> : null}
-            </div>
-        </>
+        <header className={`${styles.layout}`}>
+            <FcRating className={`${styles['layout__logo']}`} size={50} />
+            <IoCart className={`${styles['layout__cart']}`} size={30} />
+            <GiHamburgerMenu onClick={() => setShow(!show)} className={`${styles['layout__auth']}`} size={25} />
+            {show ? <SideMenu state={show} setState={setShow} /> : null}
+        </header>
     )
 
 }
