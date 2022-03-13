@@ -8,7 +8,19 @@
 
 .layout__category {
     grid-area: layout__category;
+    display: grid;
     padding: 1rem;
+    background-color: #6cb8ff;
+    grid-template-rows:     'layout__category__title'
+                            'layout__category__item';
+}
+
+.layout__category__title {
+    grid-area: layout__category__title;
+}
+
+.layout__category__item {
+    grid-area: layout__category__item;
 }
 
 .layout__product__list {
